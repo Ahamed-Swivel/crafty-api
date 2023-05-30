@@ -1,5 +1,5 @@
-import { Router } from "express";
+import { Router } from 'express'
 
-const router = Router();
+const analyticRouter = Router()
 
-export default router;
+export default analyticRouter

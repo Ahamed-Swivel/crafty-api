@@ -1,10 +1,10 @@
-import type {Config} from 'jest';
+import type { Config } from 'jest'
 
 export default async (): Promise<Config> => {
   return {
     verbose: true,
     testEnvironment: 'node',
-    setupFiles: ["dotenv/config"],
-    testTimeout: 90000
-  };
-};
+    setupFiles: ['dotenv/config'],
+    testTimeout: 90000,
+  }
+}

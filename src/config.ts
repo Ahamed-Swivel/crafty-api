@@ -1,10 +1,10 @@
-import dotenv from "dotenv";
-dotenv.config();
+import dotenv from 'dotenv'
+dotenv.config()
 
 const config = {
   port: process.env.PORT || 3000,
   databaseUrl: process.env.DATABASE_URL || '',
   jwtSecret: process.env.JWT_SECRET || '',
-};
+}
 
-export default config;
+export default config

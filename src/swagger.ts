@@ -1,4 +1,4 @@
-import swaggerJSDoc from 'swagger-jsdoc';
+import swaggerJSDoc from 'swagger-jsdoc'
 
 const swaggerOptions = {
   definition: {
@@ -10,8 +10,8 @@ const swaggerOptions = {
     },
   },
   apis: ['**/*.ts'],
-};
+}
 
-const swaggerSpec = swaggerJSDoc(swaggerOptions);
+const swaggerSpec = swaggerJSDoc(swaggerOptions)
 
 export default swaggerSpec
