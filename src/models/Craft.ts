@@ -7,6 +7,7 @@ export interface ICraft extends Document {
   price: number
   imageUrl: string
   availableQuantity: number
+  status: boolean
 }
 
 const ProductSchema = new Schema<ICraft>(
@@ -17,6 +18,7 @@ const ProductSchema = new Schema<ICraft>(
     price: { type: Number, required: true },
     imageUrl: { type: String },
     availableQuantity: { type: Number, required: true },
+    status: { type: Boolean, default: true },
   },
   {
     versionKey: false,

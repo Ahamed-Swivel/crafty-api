@@ -1,6 +1,6 @@
-import mongoose, { Document, Schema } from 'mongoose'
+import mongoose, { Document, Schema, model } from 'mongoose'
 
-interface IOrder extends Document {
+export interface IOrder extends Document {
   customerName: string
   contact: string
   address: string
@@ -8,6 +8,9 @@ interface IOrder extends Document {
     {
       craftId: string
       quantity: number
+      title: string
+      price: number
+      imageUrl: string
     }
   ]
 }
@@ -19,14 +22,11 @@ const orderSchema = new Schema<IOrder>(
     address: { type: String, required: true },
     orderItems: [
       {
-        craftId: {
-          type: mongoose.Schema.Types.ObjectId,
-          required: true,
-        },
-        quantity: {
-          type: Number,
-          required: true,
-        },
+        craftId: { type: mongoose.Schema.Types.ObjectId, required: true },
+        quantity: { type: Number, required: true },
+        title: { type: String, required: true },
+        price: { type: Number, required: true },
+        imageUrl: { type: String },
       },
     ],
   },
@@ -42,6 +42,4 @@ const orderSchema = new Schema<IOrder>(
   }
 )
 
-const OrderModel = mongoose.model<IOrder>('Order', orderSchema)
-
-export default OrderModel
+export const Order = model<IOrder>('Order', orderSchema)

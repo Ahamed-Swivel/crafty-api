@@ -1,9 +1,9 @@
 import bcrypt from 'bcrypt'
-import UserModel, { IUser } from '../models/User'
+import { User, IUser } from '../models/User'
 
 class AuthRepository {
   async findByEmail(email: string): Promise<IUser | null> {
-    return UserModel.findOne({ email }).exec()
+    return User.findOne({ email }).exec()
   }
 
   async comparePasswords(
@@ -19,7 +19,7 @@ class AuthRepository {
     password: string
   ): Promise<IUser> {
     const hashedPassword = await bcrypt.hash(password, 10)
-    const user = new UserModel({ name, email, password: hashedPassword })
+    const user = new User({ name, email, password: hashedPassword })
     return user.save()
   }
 }

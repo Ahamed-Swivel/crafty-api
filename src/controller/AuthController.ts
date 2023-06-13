@@ -5,7 +5,7 @@ import AuthRepository from '../repository/AuthRepository'
 import config from '../config'
 import logger from '../logger'
 
-class AdminController {
+class AuthController {
   async login(req: Request, res: Response): Promise<void> {
     const { email, password } = req.body
 
@@ -69,4 +69,4 @@ class AdminController {
   }
 }
 
-export default new AdminController()
+export default new AuthController()
