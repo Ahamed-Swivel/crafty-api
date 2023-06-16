@@ -11,7 +11,7 @@ craftRouter.post(
   validateCraft,
   CraftController.createCraft
 )
-craftRouter.get('/', authenticateToken, CraftController.getCrafts)
+craftRouter.get('/', CraftController.getCrafts)
 craftRouter.get('/:itemId', authenticateToken, CraftController.getCraftById)
 craftRouter.delete('/:itemId', authenticateToken, CraftController.disableCraft)
 craftRouter.patch(

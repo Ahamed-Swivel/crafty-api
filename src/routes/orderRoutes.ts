@@ -13,7 +13,6 @@ orderRouter.get(
 )
 orderRouter.post(
   '/',
-  authenticateToken,
   validateOrder,
   OrderController.createOrder
 )
