@@ -8,7 +8,7 @@ class CraftRepository {
   }
 
   public getCrafts(): Promise<ICraft[]> {
-    return Craft.find()
+    return Craft.find({status: true})
   }
 
   public getCraftById(itemId: string): Promise<ICraft | null> {
