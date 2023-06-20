@@ -48,7 +48,7 @@ class AuthController {
 
     try {
       // Check if user already exists
-      const existingUser = await AuthRepository.findByEmail(email)
+      const existingUser = await AuthRepository.findByEmail(email.toString())
 
       if (existingUser) {
         res.status(409).json({ message: 'User already exists' })

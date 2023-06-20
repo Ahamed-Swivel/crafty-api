@@ -5,15 +5,7 @@ import OrderController from '../controller/OrderController'
 
 const orderRouter = Router()
 
-orderRouter.get(
-  '/',
-  authenticateToken,
-  OrderController.getOrders
-)
-orderRouter.post(
-  '/',
-  validateOrder,
-  OrderController.createOrder
-)
+orderRouter.get('/', authenticateToken, OrderController.getOrders)
+orderRouter.post('/', validateOrder, OrderController.createOrder)
 
 export default orderRouter
