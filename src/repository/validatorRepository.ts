@@ -3,7 +3,7 @@ import Joi from 'joi'
 
 const CraftSchema = Joi.object({
   title: Joi.string().min(4).required(),
-  description: Joi.string().min(6),
+  description: Joi.string(),
   category: Joi.string(),
   price: Joi.number().required(),
   imageUrl: Joi.string().required(),

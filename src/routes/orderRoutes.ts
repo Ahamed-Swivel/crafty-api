@@ -8,7 +8,6 @@ const orderRouter = Router()
 orderRouter.get(
   '/',
   authenticateToken,
-  validateOrder,
   OrderController.getOrders
 )
 orderRouter.post(
