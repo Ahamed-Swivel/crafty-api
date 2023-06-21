@@ -1,11 +1,16 @@
 import { Document, Schema, model } from 'mongoose'
 
-export interface IUser extends Document {
+
+export interface IUser {
   name: string
   email: string
   password: string
 }
-
+export interface IUserDoc extends Document {
+  name: string
+  email: string
+  password: string
+}
 
 /**
  * @openapi
@@ -31,7 +36,7 @@ export interface IUser extends Document {
  *        email:
  *           type: string
  */
-const userSchema = new Schema<IUser>(
+const userSchema = new Schema<IUserDoc>(
   {
     name: { type: String, required: true },
     email: { type: String, required: true },
@@ -49,4 +54,4 @@ const userSchema = new Schema<IUser>(
   }
 )
 
-export const User = model<IUser>('User', userSchema)
+export const User = model<IUserDoc>('User', userSchema)

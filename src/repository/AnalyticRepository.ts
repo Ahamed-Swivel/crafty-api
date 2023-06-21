@@ -1,6 +1,6 @@
 import { Order } from '../models/Order'
 
-interface ITotalQuantity {
+export interface ITotalQuantity {
   totalQuantity: number
   sumPrice: number
   title: string

@@ -1,6 +1,7 @@
 import { Schema, model, Document } from 'mongoose'
 
-export interface ICraft extends Document {
+export interface ICraft {
+  id?: string
   title: string
   description: string
   category: string
@@ -9,7 +10,15 @@ export interface ICraft extends Document {
   availableQuantity: number
   status: boolean
 }
-
+export interface ICraftDoc extends Document {
+  title: string
+  description: string
+  category: string
+  price: number
+  imageUrl: string
+  availableQuantity: number
+  status: boolean
+}
 
 /**
  * @openapi
@@ -90,7 +99,7 @@ export interface ICraft extends Document {
  *           type: number
  */
 
-const ProductSchema = new Schema<ICraft>(
+const ProductSchema = new Schema<ICraftDoc>(
   {
     title: { type: String, required: true },
     description: { type: String },
@@ -112,4 +121,4 @@ const ProductSchema = new Schema<ICraft>(
   }
 )
 
-export const Craft = model<ICraft>('Craft', ProductSchema)
+export const Craft = model<ICraftDoc>('Craft', ProductSchema)
