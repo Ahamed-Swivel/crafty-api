@@ -15,6 +15,63 @@ export interface IOrder extends Document {
   ]
 }
 
+/**
+ * @openapi
+ * components:
+ *  schemas:
+ *    OrderItem:
+ *      required:
+ *      - craftId
+ *      - quantity
+ *      - title
+ *      - price
+ *      - imageUrl
+ *      type: object
+ *      properties:
+ *        craftId:
+ *          type: string
+ *        quantity:
+ *          type: integer
+ *        title:
+ *          type: string
+ *        price:
+ *          type: integer
+ *        imageUrl:
+ *          type: string
+ *    Order:
+ *      required:
+ *      - customerName
+ *      - contact
+ *      - address
+ *      - orderItems
+ *      type: object
+ *      properties:
+ *        customerName:
+ *          type: string
+ *        contact:
+ *          type: string
+ *        address:
+ *          type: string
+ *        orderItems:
+ *          type: array
+ *          items:
+ *            $ref: '#/components/schemas/OrderItem'
+ *    CreateOrderResponse:
+ *      type: object
+ *      properties:
+ *        id:
+ *          type: string
+ *        customerName:
+ *          type: string
+ *        contact:
+ *          type: string
+ *        address:
+ *          type: string
+ *        orderItems:
+ *          type: array
+ *          items:
+ *            $ref: '#/components/schemas/OrderItem'
+ */
 const orderSchema = new Schema<IOrder>(
   {
     customerName: { type: String, required: true },

@@ -10,6 +10,86 @@ export interface ICraft extends Document {
   status: boolean
 }
 
+
+/**
+ * @openapi
+ * components:
+ *  schemas:
+ *    Craft:
+ *      required:
+ *      - email
+ *      - title
+ *      - description
+ *      - category
+ *      - price
+ *      - imageUrl
+ *      - availableQuantity
+ *      - status
+ *      type: object
+ *      properties:
+ *        title:
+ *           type: string
+ *        description:
+ *           type: string
+ *        category:
+ *           type: string
+ *        price:
+ *           type: number
+ *        imageUrl:
+ *           type: string
+ *        availableQuantity:
+ *           type: number
+ *        status:
+ *           type: boolean
+ *    CreateCraftResponse:
+ *      type: object
+ *      properties:
+ *        title:
+ *           type: string
+ *        description:
+ *           type: string
+ *        category:
+ *           type: string
+ *        price:
+ *           type: number
+ *        imageUrl:
+ *           type: string
+ *        availableQuantity:
+ *           type: number
+ *        status:
+ *           type: boolean
+ *    AddNewCraftBody:
+ *      type: object
+ *      properties:
+ *        title:
+ *           type: string
+ *        description:
+ *           type: string
+ *        category:
+ *           type: string
+ *        price:
+ *           type: number
+ *        imageUrl:
+ *           type: string
+ *        availableQuantity:
+ *           type: number
+ *    UpdateCraftBody:
+ *      type: object
+ *      properties:
+ *        title:
+ *           type: string
+ *        description:
+ *           type: string
+ *        category:
+ *           type: string
+ *        price:
+ *           type: number
+ *        imageUrl:
+ *           type: string
+ *        availableQuantity:
+ *           type: number
+ */
+
 const ProductSchema = new Schema<ICraft>(
   {
     title: { type: String, required: true },
