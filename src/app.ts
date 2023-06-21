@@ -11,6 +11,17 @@ import authRoutes from './routes/authRoutes'
 
 const app = express()
 
+/**
+ * @openapi
+ * components:
+ *   securitySchemes:
+ *     bearerAuth:
+ *       type: http
+ *       scheme: bearer
+ *       bearerFormat: JWT
+ * security:
+ *   - bearerAuth: []
+ */
 app.use(helmet())
 app.use(express.json())
 app.use(

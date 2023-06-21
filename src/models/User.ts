@@ -6,6 +6,31 @@ export interface IUser extends Document {
   password: string
 }
 
+
+/**
+ * @openapi
+ * components:
+ *  schemas:
+ *    User:
+ *      required:
+ *      - email
+ *      - password
+ *      type: object
+ *      properties:
+ *        email:
+ *           type: string
+ *        password:
+ *           type: string
+ *    LoginSuccessResponse:
+ *      type: object
+ *      properties:
+ *        token:
+ *           type: string
+ *        name:
+ *           type: string
+ *        email:
+ *           type: string
+ */
 const userSchema = new Schema<IUser>(
   {
     name: { type: String, required: true },
